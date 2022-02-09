@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CIS 114 HOMEWORK 2 </title>
+</head>
+
+<body style="background-color:cornsilk; font-family: 'Courier New', Courier, monospace;">
+    <script>
+        document.write("<span style=\"color:red;font-size: 12; font-family:Times New Roman, Times, serif;\">xy <\/span>");
+        document.write("<span style=\"color:blue;font-size: 12; font-family:Arial, Helvetica, sans-serif;\">12 <\/span>");
+        document.write("<span style=\"color:green;font-size: 12; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;\">89<\/span>");
+
+        function compute() {
+            var number1, number2, number3, n1, n2, n3, avg, highest, lowest, product, sum;
+            number1 = document.forms["form"].elements["num1"].value;
+            number2 = document.forms["form"].elements["num2"].value;
+            number3 = document.forms["form"].elements["num3"].value;
+            n1 = parseInt(number1);
+            n2 = parseInt(number2);
+            n3 = parseInt(number3);
+            sum = n1 + n2 + n3;
+            avg = sum / 3;
+            product = n1 * n2 * n3;
+            lowest = Math.min(n1, n2, n3);
+            highest = Math.max(n1, n2, n3);
+            document.forms["form"].elements["product"].value = product;
+            document.forms["form"].elements["sum"].value = sum;
+            document.forms["form"].elements["avg"].value = avg;
+            document.forms["form"].elements["lowest"].value = lowest;
+            document.forms["form"].elements["highest"].value = highest;
+        }
+    </script>
+
+    <body>
+
+        <form name="form">
+            1st Number: <input type="text" name="num1" size="10"><br><br>
+            2nd Number: <input type="text" name="num2" size="10"><br><br>
+            3rd Number: <input type="text" name="num3" size="10"><br><br>
+            Sum is: <input type="text" name="sum" size="10"><br><br>
+            Avg is: <input type="text" name="avg" size="10"><br><br>
+            Product is: <input type="text" name="product" size="10"><br><br>
+            Lowest is: <input type="text" name="lowest" size="10"><br><br>
+            Highest is:<input type="text" name="highest" size="10"><br><br>
+            <input type="button" onclick="compute()" value="Calculate">
+            <input type="reset" value="Reset">
+        </form>
+
+    </body>
+
+    <p><a href="CIS114 HOMEWORK1.html"> back</a></p>
+
+</body>
+
+</html>
