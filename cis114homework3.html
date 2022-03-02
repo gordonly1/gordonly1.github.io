@@ -4,14 +4,146 @@
 <head>
     <meta charset="utf-8">
     <title>CIS 114 HOMEWORK 3 </title>
+    <h1>CIS 114 HOMEWORK 3</h1>
+    <h1>Student Grades</h1>
 </head>
 
 <body style="background-color:cornsilk; font-family: 'Courier New', Courier, monospace;">
-    <font size="+2">
-        <h1>CIS 114 HOMEWORK 3</h1>
-        <p style="font-family: cursive;">COMING SOON!</p>
-        <a href="CIS114HOMEWORK1.html"> back</a>
-    </font>
+
+    <script>
+        function compute() {
+            var number1, number2, number3, number4, hwAvg, midExam, finalExam, participation, finalAverage, grade, again
+            number1 = document.forms["form"].elements["hwAvg"].value;
+            number2 = document.forms["form"].elements["midExam"].value;
+            number3 = document.forms["form"].elements["finalExam"].value;
+            number4 = document.forms["form"].elements["participation"].value;
+            hwAvg = parseInt(number1);
+            midExam = parseInt(number2);
+            finalExam = parseInt(number3);
+            participation = parseInt(number4);
+            finalAverage = Math.round((.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * participation))
+            if (hwAvg > 100 || midExam > 100 || finalExam > 100 || participation > 100) {
+                finalAverage = "error"
+            }
+
+            if (finalAverage > 89) {
+                grade = "A"
+            }
+            else if (finalAverage > 79 && finalAverage < 90) {
+                grade = "B"
+            }
+            else if (finalAverage > 69 && finalAverage < 80) {
+                grade = "C"
+            }
+            else if (finalAverage > 59 && finalAverage < 70) {
+                grade = "D"
+            }
+            else if (finalAverage < 60) {
+                grade = "F"
+            }
+
+            if (finalAverage > 70){
+                again = "Student passed."
+            }
+            else {
+                again = "Student must retake the course."
+            }
+
+            document.forms["form"].elements["hwAvg"].value = hwAvg;
+            document.forms["form"].elements["midExam"].value = midExam;
+            document.forms["form"].elements["finalExam"].value = finalExam;
+            document.forms["form"].elements["participation"].value = participation;
+            document.forms["form"].elements["finalAverage"].value = finalAverage;
+            document.forms["form"].elements["grade"].value = grade;
+            document.forms["form"].elements["again"].value = again;
+        }
+    </script>
+
+    <body>
+        <form name="form">
+            Homework average: <input type="number" name="hwAvg"min="0" max="100" /><br><br>
+            Midterm exam: <input type="number" name="midExam"  min="0" max="100" /> <br><br>
+            Final exam: <input type="number" name="finalExam" min="0" max="100"/><br><br>
+            Participation: <input type="number" name="participation" min="0" max="100"/><br><br>
+            Final average: <input type="number" name="finalAverage"  min="0" max="100" readonly/><br><br>
+            Grade: <input type="text" name="grade" size="1" /><br><br>
+            <input type="text" name="again" size="23" /><br><br>
+            <input type="button" onclick="compute()" value="Calculate">
+            <input type="reset" value="Reset"><br><br><br><br><br><br>
+        </form>
+    </body>
+
+    <script>
+        function compute2(){
+            var itemTotalPrice, item1amount, item2amount, item3amount, item4amount, totalPrice, number1, number2, number3, number4, item1total, item2total, item3total, item4total
+            number1 = document.forms["form2"].elements["item1amount"].value;
+            number2 = document.forms["form2"].elements["item2amount"].value;
+            number3 = document.forms["form2"].elements["item3amount"].value;
+            number4 = document.forms["form2"].elements["item4amount"].value;
+ 
+            item1amount = parseInt(number1);
+            item2amount = parseInt(number2);
+            item3amount = parseInt(number3);
+            item4amount = parseInt(number4);
+            item1total = Math.round((20.99 * item1amount)*100)/100;
+            item2total = Math.round((12.75 * item2amount)*100)/100;
+            item3total = Math.round((9.95 * item3amount)*100)/100;
+            item4total = Math.round((35.89 * item4amount)*100)/100;
+            itemTotalPrice = Math.round((item1total + item2total + item3total + item4total)*100)/100;
+            totalPrice = itemTotalPrice + 250;
+            document.forms["form2"].elements["item1amount"].value = item1amount;
+            document.forms["form2"].elements["item2amount"].value = item2amount;
+            document.forms["form2"].elements["item3amount"].value = item3amount;
+            document.forms["form2"].elements["item4amount"].value = item4amount;
+            document.forms["form2"].elements["item1total"].value = item1total;
+            document.forms["form2"].elements["item2total"].value = item2total;
+            document.forms["form2"].elements["item3total"].value = item3total;
+            document.forms["form2"].elements["item4total"].value = item4total;
+            document.forms["form2"].elements["itemTotalPrice"].value = itemTotalPrice;
+            document.forms["form2"].elements["totalPrice"].value = totalPrice;
+        }
+
+    </script>
+
+    <form name="form2">
+        Salesperson: <input type="text" name="Salesperson" required/><br><br>
+        Item 1: <input type="number" name="item1amount" min="0"/><br><br>
+        Item 2: <input type="number" name="item2amount" min="0" /> <br><br>
+        Item 3: <input type="number" name="item3amount" min="0"/><br><br>
+        Item 4: <input type="number" name="item4amount" min="0"/><br><br>
+        Item 1 Price Total: <input type="number" name="item1total" readonly/><br><br>
+        Item 2 Price Total: <input type="number" name="item2total" readonly/> <br><br>
+        Item 3 Price Total: <input type="number" name="item3total" readonly/><br><br>
+        Item 4 Price Total: <input type="number" name="item4total" readonly/><br><br>
+        All Items Total: <input type="number" name="itemTotalPrice" readonly/><br><br>
+        Total Price: <input type="number" name="totalPrice" min="0" readonly/><br><br>
+
+        <input type="button" onclick="compute2()" value="Submit">
+        <input type="reset" value="Reset"><br><br><br><br><br><br>
+    </form>
+
+    <script>
+        function compute3(){
+        var Celsius, Farenheit, number1, number2, C, F
+        number1 = document.forms["form3"].elements["Celsius"].value;
+        number2 = document.forms["form3"].elements["Farenheit"].value;
+        C = parseInt(number1);
+        F = parseInt(number2);
+        Celsius = 5/9 * (F - 32);
+        Farenheit = (9/5 * C) + 32;
+        document.forms["form3"].elements["Celsius"].value = Celsius;
+        document.forms["form3"].elements["Farenheit"].value = Farenheit;
+        }
+    </script>
+
+    <form name ="form3">
+        Celsius = <input type="number" name="Celsius" /><br><br>
+        Farenheit = <input type="number" name="Farenheit"/><br><br>
+        <input type="button" onclick="compute3()" value="Calculate">
+        <input type="reset" value="Reset">
+    </form>
+
+    <p><a href="CIS114HOMEWORK1.html"> back</a></p>
 </body>
 
 </html>
