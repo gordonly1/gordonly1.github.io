@@ -7,11 +7,80 @@
 </head>
 
 <body style="background-color:cornsilk; font-family: 'Courier New', Courier, monospace;">
-    <font size="+2">
-        <h1>CIS 114 HOMEWORK 4</h1>
-        <p style="font-family: cursive;">COMING SOON!</p>
-        <a href="CIS114HOMEWORK1.html"> back</a>
-    </font>
+
+    <script>
+        var product1, sum1, product2, sum2
+
+        product1 = 1
+        sum1 = 0
+
+        for (i=5; i<=25; i+=4){
+            product1 *= i;
+            sum1 += i;
+        }
+
+        product1 = product1.toLocaleString();
+        sum1 = sum1.toLocaleString();
+        
+        document.write('<span style="font-size: 30px">Part 1a</span><br><br>');
+        document.write("The product of every fourth integer from 5 to 25 inclusive is " + product1 + "<br><br>");
+        document.write("The sum of every fourth integer from 5 to 25 inclusive is " + sum1 + "<br><br><br><br>");
+
+        i = 3
+        product2 = 1
+        sum2 = 0
+
+        while(i<=18){
+            product2 *= i;
+            sum2 += i;
+            i += 3
+        }
+
+        product2 = product2.toLocaleString();
+        sum2 = sum2.toLocaleString();
+
+        document.write('<span style="font-size: 30px">Part 1b</span><br><br>');
+        document.write("The product of every third integer from 3 to 18 inclusive is " + product2 + "<br><br>");
+        document.write("The sum of every third integer from 3 to 18 inclusive is " + sum2 + "<br><br><br><br>");
+
+    </script>
+
+    <script>
+
+        var base, interest1, interest2, interest3, years
+
+        base = 1000
+        interest1 = 0.05
+        interest2 = 0.06
+        interest3 = 0.07
+        years = 10
+
+        document.write("Interest of 0.05 <br>")
+        for(i=1; i<=years; i++){
+            this.value = (base * Math.pow(1 + interest1, i))
+            this.value = parseFloat(this.value).toFixed(2)
+            document.write("year" + i + " " + this.value + "<br>")
+        }
+
+        document.write("<br>Interest of 0.06 <br>")
+        for(i=1; i<=years; i++){
+            this.value = (base * Math.pow(1 + interest2, i))
+            this.value = parseFloat(this.value).toFixed(2)
+            document.write("year" + i + " " + this.value + "<br>")
+        }
+
+        document.write("<br>Interest of 0.07 <br>")
+        for(i=1; i<=years; i++){
+            this.value = (base * Math.pow(1 + interest3, i))
+            this.value = parseFloat(this.value).toFixed(2)
+            document.write("year" + i + " " + this.value + "<br>")
+        }
+
+    </script>
+
 </body>
+
+
+<p><a href="CIS114HOMEWORK1.html"> back</a></p>
 
 </html>
