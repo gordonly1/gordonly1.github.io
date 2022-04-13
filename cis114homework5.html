@@ -1,5 +1,5 @@
-<!DOCTYPE red>
-<red>
+<!DOCTYPE html>
+<html>
 
     <head>
         <meta charset="utf-8">
@@ -201,33 +201,33 @@
                 ["CA", "California", "Sacramento", "39,512,223"],
                 ["CO", "Colorado", "Denver", "5,758,736"],
             ];
-            
-            function printStateInfo() {
-                stateNameInput = document.getElementById("stateName").value.trim().toLowerCase();
 
-                stateInfo = null;
-                for (j = 0; j < stateInformation.length; j++) {
-                    if (stateNameInput == stateInformation[j][0].toLowerCase() || stateNameInput == stateInformation[j][1].toLowerCase()) {
-                        stateInfo = stateInformation[j];
-                        break;
+                function printStateInfo() {
+                    stateNameInput = document.getElementById("stateName").value.trim().toLowerCase();
+
+                    stateInfo = null;
+                    for (j = 0; j < stateInformation.length; j++) {
+                        if (stateNameInput == stateInformation[j][0].toLowerCase() || stateNameInput == stateInformation[j][1].toLowerCase()) {
+                            stateInfo = stateInformation[j];
+                            break;
+                        }
+                    }
+
+                    if (stateInfo) {
+                        document.getElementById("results").innerText = "Here is the information you requested:\n" +
+                            "State abbr: " + stateInfo[0] + "\n" +
+                            "State Name: " + stateInfo[1] + "\n" +
+                            "Capital: " + stateInfo[2] + "\n" +
+                            "Population: " + stateInfo[3] + "";
+                    } else {
+                        document.getElementById("results").innerText = "We do not have information about this state, we only have information about AL, AK, AZ, AR, CA, or CO";
                     }
                 }
-
-                if (stateInfo) {
-                    document.getElementById("results").innerText = "Here is the information you requested:\n" +
-                        "State abbr: " + stateInfo[0] + "\n" +
-                        "State Name: " + stateInfo[1] + "\n" +
-                        "Capital: " + stateInfo[2] + "\n" +
-                        "Population: " + stateInfo[3] + "";
-                } else {
-                    document.getElementById("results").innerText = "We do not have information about this state, we only have information about AL, AK, AZ, AR, CA, or CO";
-                }
-            }
-        </script>
+            </script>
 
     </body>
     <br>
     <a href="CIS114HOMEWORK1.html"> back</a>
     </body>
 
-</red>
+</html>
