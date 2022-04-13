@@ -203,11 +203,11 @@
             ];
 
             function printStateInfo() {
-                stateInput = document.getElementById("stateName").value.trim().toLowerCase();
+                stateNameInput = document.getElementById("stateName").value.trim().toLowerCase();
 
                 stateInfo = null;
                 for (i = 0; i < stateInformation.length; i++) {
-                    if (stateInput == stateInformation[i][0].toLowerCase() || stateInput == stateInformation[i][1].toLowerCase()) {
+                    if (stateNameInput == stateInformation[i][0].toLowerCase() || stateNameInput == stateInformation[i][1].toLowerCase()) {
                         stateInfo = stateInformation[i];
                         break;
                     }
