@@ -201,14 +201,14 @@
                 ["CA", "California", "Sacramento", "39,512,223"],
                 ["CO", "Colorado", "Denver", "5,758,736"],
             ];
-
+            
             function printStateInfo() {
                 stateNameInput = document.getElementById("stateName").value.trim().toLowerCase();
 
                 stateInfo = null;
-                for (i = 0; i < stateInformation.length; i++) {
-                    if (stateNameInput == stateInformation[i][0].toLowerCase() || stateNameInput == stateInformation[i][1].toLowerCase()) {
-                        stateInfo = stateInformation[i];
+                for (j = 0; j < stateInformation.length; j++) {
+                    if (stateNameInput == stateInformation[j][0].toLowerCase() || stateNameInput == stateInformation[j][1].toLowerCase()) {
+                        stateInfo = stateInformation[j];
                         break;
                     }
                 }
