@@ -1,17 +1,233 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE red>
+<red>
 
-<head>
-    <meta charset="utf-8">
-    <title>CIS 114 HOMEWORK 5 </title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>CIS 114 HOMEWORK 8 </title>
+    </head>
 
-<body style="background-color:cornsilk; font-family: 'Courier New', Courier, monospace;">
-    <font size="+2">
-        <h1>CIS 114 HOMEWORK 5</h1>
-        <p style="font-family: cursive;">COMING SOON!</p>
-        <a href="CIS114HOMEWORK1.html"> back</a>
-    </font>
-</body>
+    <body style="background-color:cornsilk; font-family: 'Courier New', Courier, monospace;">
 
-</html>
+        <script>
+            function elementChecked(input) {
+                for (i = 0; i < input.length; i++) {
+                    if (input[i].checked || input[i].selected) {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+
+            function compute() {
+                word = document.getElementById("word").value;
+                colorSelected = elementChecked(document.getElementsByName("color"));
+                OSSelected = elementChecked(document.getElementsByClassName("OS"));
+                foodSelected = elementChecked(document.getElementsByClassName("food"));
+
+                if (!word) {
+                    document.getElementById("error").style.display = "block";
+                } else {
+                    document.getElementById("error").style.display = "none";
+                }
+
+                if (!colorSelected) {
+                    document.getElementById("error2").style.display = "block";
+                } else {
+                    document.getElementById("error2").style.display = "none";
+                }
+
+                if (!OSSelected) {
+                    document.getElementById("error3").style.display = "block";
+                } else {
+                    document.getElementById("error3").style.display = "none";
+                }
+
+                if (!foodSelected) {
+                    document.getElementById("error4").style.display = "block";
+                } else {
+                    document.getElementById("error4").style.display = "none";
+                }
+
+                if (word && colorSelected && OSSelected && foodSelected) {
+                    document.getElementById("success").style.display = "block";
+                } else {
+                    document.getElementById("success").style.display = "none";
+                }
+            }
+
+            function reset() {
+                document.getElementByName("form").reset();
+            }
+        </script>
+
+        <div>
+
+            <form name="form">
+                <h2>Text Box</h2>
+
+                <p>Enter your favorite word or number:</p>
+                <table>
+                    <input type="text" name="word" id="word">
+                </table>
+
+                <p id="error" style="display: none; color: magenta;">Error: Please enter a word or number.</p>
+
+                <br>
+                <h2>Radio Buttons</h2>
+
+                <p>Choose your favorite primary color:</p>
+
+                <input type="radio" id="red" name="color" value="red">
+                <label for="red">red</label><br>
+                <input type="radio" id="blue" name="color" value="blue">
+                <label for="blue">blue</label><br>
+                <input type="radio" id="yellow" name="color" value="yellow">
+                <label for="yellow">yellow</label>
+
+                <p id="error2" style="display: none; color: magenta;">Error: Please make a selection.</p>
+
+                <br><br>
+                <h2>Checkbox</h2>
+
+                <p>Choose what type(s) of OS you use:</p>
+
+                <input type="checkbox" id="OS1" class="OS" name="OS1" value="Bike">
+                <label for="OS1"> Windows</label><br>
+                <input type="checkbox" id="OS2" class="OS" name="OS2" value="Car">
+                <label for="OS2"> Mac </label><br>
+                <input type="checkbox" id="OS3" class="OS" name="OS3" value="Boat">
+                <label for="OS3"> Linux</label><br>
+
+                <p id="error3" style="display: none; color: magenta;">Error: Please choose at least one.</p>
+
+                <br>
+                <h2>Select box</h2>
+
+                <p><label for="food">Select your favorite food:</label></p>
+
+                <p>
+                    <select id="food" name="food">
+                        <option value="">Select one</option>
+                        <option value="cookie" class="food">cookie</option>
+                        <option value="rice" class="food">rice</option>
+                        <option value="pasta" class="food">pasta</option>
+                        <option value="burrito" class="food">burrito</option>
+                    </select>
+                </p>
+
+                <p id="error4" style="display: none; color: magenta;">Error: Please make a selection.</p>
+
+                <p>
+                    <input type="button" onclick="compute()" value="Submit">
+                <p></p>
+                <input type="button" onclick="reset()" value="Reset Form">
+                <br><br><br><br>
+                </p>
+            </form>
+        </div>
+
+        <div id="success" style="font-size: x-large; color: darkgreen; display: none;">
+            Nice job!
+        </div>
+
+
+        <h2>Links Menu 1</h2>
+        <p>Select a URL:</p>
+
+        <form>
+            <select id="select1" onchange="change()">
+                <option value="">Select one</option>
+                <option value="https://www.google.com/">Google</option>
+                <option value="https://www.youtube.com/">Youtube</option>
+                <option value="https://twitter.com/home">Twitter</option>
+            </select>
+        </form>
+
+        <h2>Links Menu 2</h2>
+        <p>Select a URL:</p>
+
+        <form>
+            <select id="select2">
+                <option value="">Select one</option>
+                <option value="https://www.google.com/">Google</option>
+                <option value="https://www.youtube.com/">Youtube</option>
+                <option value="https://twitter.com/home">Twitter</option>
+            </select>
+            <br><br>
+
+            <input type="button" onClick="onClick()" value="Navigate">
+            <br><br><br><br>
+        </form>
+
+        <script>
+            function change() {
+                url = document.getElementById("select1").value;
+
+                if (url != "Select one") {
+                    window.open(url, "about:blank");
+                }
+            }
+
+            function onClick() {
+                url = document.getElementById("select2").value;
+
+                if (url != "Select one") {
+                    window.open(url, "about:blank");
+                }
+            }
+        </script>
+
+        <h2>State Info</h2>
+
+        <form>
+            <label for="stateName">Enter a state name or the state's abbrievation:</label>
+            <br>
+            <input id="stateName">
+            <br><br>
+
+            <input type="button" onclick="printStateInfo()" value="Show Information">
+            <br><br>
+        </form>
+
+        <div id="results"></div>
+
+        <script>
+            stateInformation = [
+                ["AL", "Alabama", "Montgomery", "4,903,185"],
+                ["AK", "Alaska", "Juneau", "731,545"],
+                ["AZ", "Arizona", "Phoenix", "7,278,717"],
+                ["AR", "Arkansas", "Little Rock", "3,017,825"],
+                ["CA", "California", "Sacramento", "39,512,223"],
+                ["CO", "Colorado", "Denver", "5,758,736"],
+            ];
+
+            function printStateInfo() {
+                stateInput = document.getElementById("stateName").value.trim().toLowerCase();
+
+                stateInfo = null;
+                for (i = 0; i < stateInformation.length; i++) {
+                    if (stateInput == stateInformation[i][0].toLowerCase() || stateInput == stateInformation[i][1].toLowerCase()) {
+                        stateInfo = stateInformation[i];
+                        break;
+                    }
+                }
+
+                if (stateInfo) {
+                    document.getElementById("results").innerText = "Here is the information you requested:\n" +
+                        "State abbr: " + stateInfo[0] + "\n" +
+                        "State Name: " + stateInfo[1] + "\n" +
+                        "Capital: " + stateInfo[2] + "\n" +
+                        "Population: " + stateInfo[3] + "";
+                } else {
+                    document.getElementById("results").innerText = "We do not have information about this state, we only have information about AL, AK, AZ, AR, CA, or CO";
+                }
+            }
+        </script>
+
+    </body>
+    <br>
+    <a href="CIS114HOMEWORK1.html"> back</a>
+    </body>
+
+</red>
