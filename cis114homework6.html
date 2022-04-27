@@ -7,6 +7,41 @@
 </head>
 
 <body style="background-color:cornsilk; font-family: 'Courier New', Courier, monospace;">
+
+    <h2>Please enter a number with at least 4 decimals.</h2>
+
+    <form>
+
+        <div id="error" style="display:none; color: maroon"></div>
+
+        <input type="text" id="input" placeholder="Enter Decimal Number" required>
+        <br>
+
+        <input type="button" onclick="compute()" value="Submit">
+        <br><br>
+
+        <div id="conversion" class="conversion">
+            <label for="integer">The nearest integer:</label>
+            <input class="computedNumbers" type="text" readonly id="integer">
+            <br><br>
+
+            <label for="sqaureRoot">The nearest square root:</label>
+            <input class="computedNumbers" type="text" readonly id="sqaureRoot">
+            <br><br>
+
+            <label for="tenth">The nearest tenth:</label>
+            <input class="computedNumbers" type="text" readonly id="tenth">
+            <br><br>
+
+            <label for="hundredth">The nearest hundredth:</label>
+            <input class="computedNumbers" type="text" readonly id="hundredth">
+            <br><br>
+
+            <label for="thousandth">The nearest thousandth:</label>
+            <input class="computedNumbers" type="text" readonly id="thousandth">
+        </div>
+    </form>
+
     <script>
 
         function compute() {
@@ -35,95 +70,59 @@
             document.getElementById("tenth").value = roundedTenth;
             document.getElementById("hundredth").value = roundedHundredth;
             document.getElementById("thousandth").value = roundedThousandth;
-
         }
 
-
     </script>
-
-    <h2>Please enter a number with at least 4 decimals.</h2>
-
-    <form>
-
-        <div id="error" style="display:none; color: maroon"></div>
-
-        <input type="text" id="input" placeholder ="Enter Decimal Number" required>
-        <br>
-
-        <input type="button" onclick="compute()" value = "Submit">
-        <br><br>
-
-        <div id="conversion" class="conversion">
-            <label for = "integer">The nearest integer:</label>
-            <input class="computedNumbers" type="text" readonlyid="integer">
-            <br><br>
-
-            <label for="sqaureRoot">The square root:</label>
-            <input class="computedNumbers" type="text" readonlyid="sqaureRoot">
-            <br><br>
-
-            <label for="tenth">The nearest tenth:</label>
-            <input class="computedNumbers" type="text" readonlyid="tenth">
-            <br><br>
-
-            <label for="hundredth">The nearest hundredth:</label>
-            <input class="computedNumbers" type="text" readonlyid="hundredth">
-            <br><br>
-
-            <label for="thousandth">The nearest thousandth:</label>
-            <input class="computedNumbers" type="text" readonlyid="thousandth">
-        </div>
-    </form>
-
 
 </body>
 
 <br><br>
-<h2> Number of Characters in Text</h2>
+<h2> Number of Characters in a Text Box</h2>
 
 <script>
-    function messageWindow(message) {
-        let newWindow = window.open("", "", "width=300,height=100");
-        newWindow.document.write("<p>" + message + "</p>");
+
+    function textWindow(text) {
+        blankWindow = window.open(" ", " ", "width=350, height=150");
+        blankWindow.document.write("<p>" + text + "</p>");
     }
 
     function compute2() {
-        let haystack = document.getElementById("haystack").value;
-        let needle = document.getElementById("needle").value;
+        textSearch = document.getElementById("textSearch").value;
+        characterFind = document.getElementById("characterFind").value;
 
-        if (needle.length < 1) {
-            messageWindow("Please enter the search character!");
-            document.getElementById("output").innerText = "";
+        if (characterFind.length < 1) {
+            textWindow("Please enter the search character!");
+            document.getElementById("output").innerText = " ";
             return;
         }
 
         search = 0;
-        for (i = 0; i < haystack.length; i++) {
-            let character = haystack.charAt(i);
+        for (i = 0; i < textSearch.length; i++) {
+            let character = textSearch.charAt(i);
 
-            if (character.toLowerCase() == needle.toLowerCase()) {
+            if (character.toLowerCase() == characterFind.toLowerCase()) {
                 search++;
             }
         }
 
         if (search == 0) {
-            messageWindow("Search character '" + needle + "' not found in text string!");
+            textWindow("Search character '" + characterFind + "' not found in text string!");
             document.getElementById("output").innerText = "";
         } else {
-            document.getElementById("output").innerText = "The character was found " + search + " time(s).";
+            document.getElementById("output").innerText = "The desired character was found " + search + " time(s).";
         }
     }
 </script>
 
 <form>
     <p>
-        <label for="haystack">Text:</label><br>
-        <textarea id="haystack" cols="40" rows="10"></textarea>
+        <label for="textSearch">Text:</label><br>
+        <textarea id="textSearch" cols="40" rows="10"></textarea>
     </p>
 
     <p>
-        <label for="needle">Character to search:</label><br>
-        <input id="needle" size="1" maxlength="1">
+        <label for="characterFind">Character to search:</label><br>
+        <input id="characterFind" size="1" maxlength="1">
     </p>
 
     <p>
