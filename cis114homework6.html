@@ -103,7 +103,7 @@
 <script>
 
     function textWindow(text) {
-        blankWindow = window.open(" ", " ", "width=750, height=250");
+        blankWindow = window.open(" ", " ", "width=550, height=150");
         blankWindow.document.write("<p>" + text + "</p>");
     }
 
@@ -127,7 +127,7 @@
         }
 
         if (search == 0) {
-            textWindow("The search character was not found in text string!");
+            textWindow("The desired search character was not found in the text!");
             document.getElementById("output").innerText =  "";
         } else {
             document.getElementById("output").innerText = "The desired character was found " + search + " time(s).";
