@@ -7,11 +7,134 @@
 </head>
 
 <body style="background-color:cornsilk; font-family: 'Courier New', Courier, monospace;">
-    <font size="+2">
-        <h1>CIS 114 HOMEWORK 6</h1>
-        <p style="font-family: cursive;">COMING SOON!</p>
-        <a href="CIS114HOMEWORK1.html"> back</a>
-    </font>
+    <script>
+
+        function compute() {
+            userInput = document.getElementById("input").value;
+
+            if (!/^\d+\.\d{4}$/.test(userInput)) {
+                document.getElementById("error").innerText = "This number does not have at least 4 decimals!";
+                document.getElementById("error").style.display = "block";
+                document.getElementById("integer").value = " ";
+                document.getElementById("sqaureRoot").value = " ";
+                document.getElementById("tenth").value = " ";
+                document.getElementById("hundredth").value = " ";
+                document.getElementById("thousandth").value = " ";
+                return;
+            }
+
+            float = parseFloat(userInput);
+            roundedInt = float.toFixed();
+            roundedSquareRoot = Math.sqrt(float).toFixed();
+            roundedTenth = float.toFixed(1);
+            roundedHundredth = float.toFixed(2);
+            roundedThousandth = float.toFixed(3);
+            document.getElementById("error").style.display = "none";
+            document.getElementById("integer").value = roundedInt;
+            document.getElementById("sqaureRoot").value = roundedSquareRoot;
+            document.getElementById("tenth").value = roundedTenth;
+            document.getElementById("hundredth").value = roundedHundredth;
+            document.getElementById("thousandth").value = roundedThousandth;
+
+        }
+
+
+    </script>
+
+    <h2>Please enter a number with at least 4 decimals.</h2>
+
+    <form>
+
+        <div id="error" style="display:none; color: maroon"></div>
+
+        <input type="text" id="input" placeholder ="Enter Decimal Number" required>
+        <br>
+
+        <input type="button" onclick="compute()" value = "Submit">
+        <br><br>
+
+        <div id="conversion" class="conversion">
+            <label for = "integer">The nearest integer:</label>
+            <input class="computedNumbers" type="text" readonlyid="integer">
+            <br><br>
+
+            <label for="sqaureRoot">The square root:</label>
+            <input class="computedNumbers" type="text" readonlyid="sqaureRoot">
+            <br><br>
+
+            <label for="tenth">The nearest tenth:</label>
+            <input class="computedNumbers" type="text" readonlyid="tenth">
+            <br><br>
+
+            <label for="hundredth">The nearest hundredth:</label>
+            <input class="computedNumbers" type="text" readonlyid="hundredth">
+            <br><br>
+
+            <label for="thousandth">The nearest thousandth:</label>
+            <input class="computedNumbers" type="text" readonlyid="thousandth">
+        </div>
+    </form>
+
+
 </body>
+
+<br><br>
+<h2> Number of Characters in Text</h2>
+
+<script>
+    function messageWindow(message) {
+        let newWindow = window.open("", "", "width=300,height=100");
+        newWindow.document.write("<p>" + message + "</p>");
+    }
+
+    function compute2() {
+        let haystack = document.getElementById("haystack").value;
+        let needle = document.getElementById("needle").value;
+
+        if (needle.length < 1) {
+            messageWindow("Please enter the search character!");
+            document.getElementById("output").innerText = "";
+            return;
+        }
+
+        search = 0;
+        for (i = 0; i < haystack.length; i++) {
+            let character = haystack.charAt(i);
+
+            if (character.toLowerCase() == needle.toLowerCase()) {
+                search++;
+            }
+        }
+
+        if (search == 0) {
+            messageWindow("Search character '" + needle + "' not found in text string!");
+            document.getElementById("output").innerText = "";
+        } else {
+            document.getElementById("output").innerText = "The character was found " + search + " time(s).";
+        }
+    }
+</script>
+
+<form>
+    <p>
+        <label for="haystack">Text:</label><br>
+        <textarea id="haystack" cols="40" rows="10"></textarea>
+    </p>
+
+    <p>
+        <label for="needle">Character to search:</label><br>
+        <input id="needle" size="1" maxlength="1">
+    </p>
+
+    <p>
+        <button type="button" onclick="compute2()">Search</button>
+    </p>
+
+    <p>
+        <label for="output">Output:</label><br>
+        <textarea id="output" cols="40" rows="10" readonly></textarea>
+    </p>
+</form>
+<a href="CIS114HOMEWORK1.html"> back</a>
 
 </html>
