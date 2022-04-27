@@ -80,24 +80,24 @@
 <h2> Number of Specific Characters in a Text Box</h2>
 
 <form>
-    
-        <label for="textSearch">Text Box:</label><br>
-        <textarea id="textSearch" cols="50" rows="10"></textarea>
-        <br><br>
-    
-        <label for="characterFind">Please type your desired character to search:</label>
-        <br>
-        <input id="characterFind" size="1" maxlength="1">
-  
-    
-        <button type="button" onclick="compute2()">Search</button>
-        <br><br>
-    
-        <label for="output">Number of Chars:</label>
-        <br>
-        <textarea id="output" cols="50" rows="5" readonly></textarea>
-        <br><br>
-    
+
+    <label for="textSearch">Text Box:</label><br>
+    <textarea id="textSearch" cols="50" rows="10"></textarea>
+    <br><br>
+
+    <label for="characterFind">Please type your desired character to search:</label>
+    <br>
+    <input id="characterFind" size="1" maxlength="1">
+
+
+    <button type="button" onclick="compute2()">Search</button>
+    <br><br>
+
+    <label for="output">Number of Chars:</label>
+    <br>
+    <textarea id="output" cols="50" rows="5" readonly></textarea>
+    <br><br>
+
 </form>
 
 <script>
@@ -120,7 +120,6 @@
         search = 0;
         for (i = 0; i < textSearch.length; i++) {
             character = textSearch.charAt(i);
-
             if (character.toLowerCase() == characterFind.toLowerCase()) {
                 search++;
             }
@@ -128,7 +127,7 @@
 
         if (search == 0) {
             textWindow("The desired search character was not found in the text!");
-            document.getElementById("output").innerText =  "";
+            document.getElementById("output").innerText = " ";
         } else {
             document.getElementById("output").innerText = "The desired character was found " + search + " time(s).";
         }
