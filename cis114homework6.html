@@ -77,7 +77,27 @@
 </body>
 
 <br><br>
-<h2> Number of Characters in a Text Box</h2>
+<h2> Number of Specific Characters in a Text Box</h2>
+
+<form>
+    
+        <label for="textSearch">Text Box:</label><br>
+        <textarea id="textSearch" cols="50" rows="10"></textarea>
+        <br><br>
+    
+        <label for="characterFind">Please type your desired character to search:</label>
+        <br>
+        <input id="characterFind" size="1" maxlength="1">
+  
+    
+        <button type="button" onclick="compute2()">Search</button>
+        <br><br>
+    
+        <label for="output">Output:</label><br>
+        <textarea id="output" cols="50" rows="5" readonly></textarea>
+        <br><br>
+    
+</form>
 
 <script>
 
@@ -114,26 +134,7 @@
     }
 </script>
 
-<form>
-    <p>
-        <label for="textSearch">Text:</label><br>
-        <textarea id="textSearch" cols="40" rows="10"></textarea>
-    </p>
 
-    <p>
-        <label for="characterFind">Character to search:</label><br>
-        <input id="characterFind" size="1" maxlength="1">
-    </p>
-
-    <p>
-        <button type="button" onclick="compute2()">Search</button>
-    </p>
-
-    <p>
-        <label for="output">Output:</label><br>
-        <textarea id="output" cols="40" rows="10" readonly></textarea>
-    </p>
-</form>
 <a href="CIS114HOMEWORK1.html"> back</a>
 
 </html>
