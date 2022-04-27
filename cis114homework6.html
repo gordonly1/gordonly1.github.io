@@ -103,7 +103,7 @@
 <script>
 
     function textWindow(text) {
-        blankWindow = window.open(" ", " ", "width=350, height=150");
+        blankWindow = window.open(" ", " ", "width=750, height=250");
         blankWindow.document.write("<p>" + text + "</p>");
     }
 
@@ -112,7 +112,7 @@
         characterFind = document.getElementById("characterFind").value;
 
         if (characterFind.length < 1) {
-            textWindow("Please enter the search character!");
+            textWindow("Please enter a desired search character!");
             document.getElementById("output").innerText = " ";
             return;
         }
@@ -127,14 +127,13 @@
         }
 
         if (search == 0) {
-            textWindow("Search character '" + characterFind + "' not found in text string!");
-            document.getElementById("output").innerText = "";
+            textWindow("The search character was not found in text string!");
+            document.getElementById("output").innerText =  "";
         } else {
             document.getElementById("output").innerText = "The desired character was found " + search + " time(s).";
         }
     }
 </script>
-
 
 <a href="CIS114HOMEWORK1.html"> back</a>
 
