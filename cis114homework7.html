@@ -14,18 +14,6 @@
         padding: 10px;
     }
 
-    .whiteBackground {
-        background-color: white;
-    }
-
-    .cyanBackground {
-        background-color: cyan;
-    }
-
-    .yellowBackground {
-        background-color: yellow;
-    }
-
     .fontsTimesNewRoman {
         font-family: 'Times New Roman', Times, serif;
     }
@@ -36,6 +24,18 @@
 
     .fontsArial {
         font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .whiteBackground {
+        background-color: white;
+    }
+
+    .cyanBackground {
+        background-color: cyan;
+    }
+
+    .yellowBackground {
+        background-color: yellow;
     }
 
     .bold {
@@ -107,6 +107,17 @@
     <h2>Styles</h2>
 
     <fieldset>
+        
+        <H3><label for="fonts">Choose a Font</label></H3>
+
+        <p></p>
+        <select id="fonts" name="fonts" onchange="change()">
+            <option value="TimesNewRoman">Times New Roman</option>
+            <option value="CourierNew">Courier New</option>
+            <option value="Arial">Arial</option>
+        </select>
+        <br><br>
+
         <H3>Choose a Background Color</H3>
 
         <p></p>
@@ -120,16 +131,6 @@
         <p></p>
         <input type="radio" id="yellowBackground" name="backgroundTheme" onchange="change()">
         <label for="yellowBackground">Yellow</label>
-        <br><br>
-
-        <H3><label for="fonts">Choose a Font</label></H3>
-
-        <p></p>
-        <select id="fonts" name="fonts" onchange="change()">
-            <option value="TimesNewRoman">Times New Roman</option>
-            <option value="CourierNew">Courier New</option>
-            <option value="Arial">Arial</option>
-        </select>
         <br><br>
 
  
