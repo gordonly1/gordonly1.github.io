@@ -55,26 +55,6 @@
                 history.go(0);
             }
 
-            function cookie() {
-                prefix = "name=";
-
-                decode = decodeURIComponent(document.cookie);
-                array = decode.split(';');
-
-                for (i = 0; i < array.length; i++) {
-                    string = array[i];
-                    while (string.charAt(0) == ' ') {
-                        string = string.substring(1);
-                    }
-
-                    if (string.indexOf(prefix) == 0) {
-                        return string.substring(prefix.length, string.length);
-                    }
-                }
-
-                return " ";
-            }
-
             name = cookie();
 
             if (name == " ") {
@@ -85,6 +65,26 @@
                 document.getElementById("username").innerText = name;
                 document.getElementById("form").className = "hidden";
                 document.getElementById("welcome").className = " ";
+            }
+
+            function cookie() {
+                prefix = "name=";
+                decode = decodeURIComponent(document.cookie);
+                array = decode.split(';');
+
+                for (i = 0; i < array.length; i++) {
+                    string = array[i];
+
+                    while (string.charAt(0) == ' ') {
+                        string = string.substring(1);
+                    }
+
+                    if (string.indexOf(prefix) == 0) {
+                        return string.substring(prefix.length, string.length);
+                    }
+                }
+
+                return " ";
             }
         </script>
 
