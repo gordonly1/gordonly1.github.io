@@ -41,8 +41,8 @@
             </form>
         </div>
 
-        <div id="greeting" class="hidden">
-            <p> Welcome back <span id="username"></span>!</p>
+        <div id="welcome" class="hidden">
+            <p> Welcome back <span id="username"></span></p>
         </div>
 
         <script>
@@ -79,11 +79,11 @@
 
             if (name == " ") {
                 document.getElementById("form").className = " ";
-                document.getElementById("greeting").className = "hidden";
+                document.getElementById("welcome").className = "hidden";
             } else {
                 document.getElementById("username").innerText = name;
                 document.getElementById("form").className = "hidden";
-                document.getElementById("greeting").className = " ";
+                document.getElementById("welcome").className = " ";
             }
         </script>
 
