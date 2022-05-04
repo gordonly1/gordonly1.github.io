@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CIS 114 HOMEWORK 7 </title>
+</head>
+
+<body style="background-color:cornsilk; font-family: 'Courier New', Courier, monospace;">
+
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    </head>
+
+    <body>
+
+
+        <h1>Assignment 7, Part 2</h1>
+
+        <div id="form" class="hidden">
+            <form>
+                <p></p>
+                Please enter your name and login
+
+                <p></p>
+                <input type="text" id="name" name="name">
+                <label for="name">Name</label>
+
+                <p></p>
+                <input type="text" id="login" name="login">
+                <label for="login">Login</label>
+
+                <p></p>
+                <button type="button" id="submitButton" onclick="submit()">Submit</button>
+
+            </form>
+        </div>
+
+        <div id="greeting" class="hidden">
+            <p> Welcome back, <span id="greetings"></span>!</p>
+        </div>
+
+        <script>
+            function submit() {
+                name = document.getElementById("name").value;
+                login = document.getElementById("login").value;
+
+                document.cookie = "name=" + name + "; path=/";
+                document.cookie = "login=" + login + "; path=/";
+                history.go(0); // refresh the page
+            }
+
+            function cookie() {
+                prefix = "name=";
+
+                decode = decodeURIComponent(document.cookie);
+                array = decode.split(';');
+
+                for (i = 0; i < array.length; i++) {
+                    string = array[i];
+                    while (string.charAt(0) == ' ') {
+                        string = string.substring(1);
+                    }
+
+                    if (string.indexOf(prefix) == 0) {
+                        return string.substring(prefix.length, string.length);
+                    }
+                }
+
+                return " ";
+            }
+
+            name = cookie();
+
+            if (name == "") {
+                document.getElementById("form").className = " ";
+                document.getElementById("greeting").className = "hidden";
+            } else {
+                document.getElementById("greetings").innerText = name;
+                document.getElementById("form").className = "hidden";
+                document.getElementById("greeting").className = " ";
+            }
+        </script>
+
+        <a href="CIS114HOMEWORK1.html"> back</a>
+    </body>
+
+</html>

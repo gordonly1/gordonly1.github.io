@@ -6,12 +6,158 @@
     <title>CIS 114 HOMEWORK 7 </title>
 </head>
 
+<style>
+    #text {
+        border: 2px solid black;
+        font-size: large;
+        width: 650px;
+        padding: 10px;
+    }
+
+    .whiteBackground {
+        background-color: white;
+    }
+
+    .cyanBackground {
+        background-color: cyan;
+    }
+
+    .yellowBackground {
+        background-color: yellow;
+    }
+
+    .fontsTimesNewRoman {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .fontsCourierNew {
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .fontsArial {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .styleBold {
+        font-weight: bold;
+    }
+
+    .styleItalic {
+        font-style: italic;
+    }
+
+    .styleUnderline {
+        text-decoration: underline;
+    }
+</style>
+
 <body style="background-color:cornsilk; font-family: 'Courier New', Courier, monospace;">
-    <font size="+2">
-        <h1>CIS 114 HOMEWORK 7</h1>
-        <p style="font-family: cursive;">COMING SOON!</p>
-        <a href="CIS114HOMEWORK1.html"> back</a>
-    </font>
+    <h1>Textbox</h1>
+
+    <div id="text">
+        The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved,
+        desirous of everything at the same time, the ones who never yawn or say a commonplace thing,
+        but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.
+    </div>
+
+    <script>
+
+        function change() {
+            fontSelector = document.getElementById("fonts");
+
+            fonts = " ";
+            switch (fontSelector.options[fontSelector.selectedIndex].value) {
+                case "TimesNewRoman":
+                    fonts = "fontsTimesNewRoman";
+                    break;
+                case "CourierNew":
+                    fonts = "fontsCourierNew";
+                    break;
+                case "Arial":
+                    fonts = "fontsArial";
+                    break;
+            }
+
+            typographicEmphasis = fonts;
+
+            backgroundColorSelectedElement = document.querySelector('input[name="backgroundColor"]:checked');
+            if (backgroundColorSelectedElement) {
+                typographicEmphasis += " " + backgroundColorSelectedElement.id;
+            }
+
+            if (document.getElementById("styleBold").checked) {
+                typographicEmphasis += " styleBold";
+            }
+
+            if (document.getElementById("styleItalic").checked) {
+                typographicEmphasis += " styleItalic";
+            }
+
+
+            if (document.getElementById("styleUnderline").checked) {
+                typographicEmphasis += " styleUnderline";
+            }
+
+            document.getElementById("text").className = typographicEmphasis;
+        }
+    </script>
+
+    <h2>Styles</h2>
+
+    <fieldset>
+        Background color
+
+        <p></p>
+        <input type="radio" id="whiteBackground" name="backgroundColor" onchange="change()">
+        <label for="whiteBackground">White</label>
+
+        <p></p>
+        <input type="radio" id="cyanBackground" name="backgroundColor" onchange="change()">
+        <label for="cyanBackground">Cyan</label>
+
+        <p></p>
+        <input type="radio" id="yellowBackground" name="backgroundColor" onchange="change()">
+        <label for="yellowBackground">Yellow</label>
+        <p></p>
+
+    </fieldset>
+
+    <fieldset>
+        <label for="fonts">Fonts</label>
+
+        <p></p>
+        <select id="fonts" name="fonts" onchange="change()">
+            <option value="TimesNewRoman">Times New Roman</option>
+            <option value="CourierNew">Courier New</option>
+            <option value="Arial">Arial</option>
+        </select>
+        <p></p>
+
+    </fieldset>
+
+    <fieldset>
+        Typographical Emphasis
+
+        <p></p>
+        <input type="checkbox" id="styleBold" name="styleBold" onchange="change()">
+        <label for="styleBold">Bold</label>
+
+        <p></p>
+        <input type="checkbox" id="styleItalic" name="styleItalic" onchange="change()">
+        <label for="styleItalic">Italic</label>
+
+        <p></p>
+        <input type="checkbox" id="styleUnderline" name="styleUnderline" onchange="change()">
+        <label for="styleUnderline">Underlined</label>
+
+    </fieldset>
+
+    <script>
+        change();
+    </script>
+
+
+    <a href="CIS114HOMEWORK1.html"> back</a>
 </body>
 
 </html>
