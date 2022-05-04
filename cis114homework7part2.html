@@ -27,12 +27,12 @@
                 <p></p>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name">
-                
+
 
                 <p></p>
                 <label for="Username">Username:</label>
                 <input type="text" id="Username" name="Username">
-                
+
 
                 <p></p>
                 <button type="button" id="submitButton" onclick="submit()">Submit</button>
@@ -80,6 +80,7 @@
             if (name == " ") {
                 document.getElementById("form").className = " ";
                 document.getElementById("welcome").className = "hidden";
+
             } else {
                 document.getElementById("username").innerText = name;
                 document.getElementById("form").className = "hidden";
