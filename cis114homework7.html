@@ -82,9 +82,9 @@
 
             typographicEmphasis = fonts;
 
-            backgroundThemeSelectedElement = document.querySelector('input[name="backgroundTheme"]:checked');
-            if (backgroundThemeSelectedElement) {
-                typographicEmphasis += " " + backgroundThemeSelectedElement.id;
+            selectedColor = document.querySelector('input[name="backgroundTheme"]:checked');
+            if (selectedColor) {
+                typographicEmphasis += " " + selectedColor.id;
             }
 
             if (document.getElementById("bold").checked) {
