@@ -38,15 +38,15 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    .styleBold {
+    .bold {
         font-weight: bold;
     }
 
-    .styleItalic {
+    .italic {
         font-style: italic;
     }
 
-    .styleUnderline {
+    .underline {
         text-decoration: underline;
     }
 </style>
@@ -54,7 +54,7 @@
 <body style="background-color:cornsilk; font-family: 'Courier New', Courier, monospace;">
     <h1>Textbox</h1>
 
-    <div id="paragraph">
+    <div id="text">
         The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved,
         desirous of everything at the same time, the ones who never yawn or say a commonplace thing,
         but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.
@@ -85,17 +85,17 @@
                 typographicEmphasis += " " + backgroundThemeSelectedElement.id;
             }
 
-            if (document.getElementById("styleBold").checked) {
-                typographicEmphasis += " styleBold";
+            if (document.getElementById("bold").checked) {
+                typographicEmphasis += " bold";
             }
 
-            if (document.getElementById("styleItalic").checked) {
-                typographicEmphasis += " styleItalic";
+            if (document.getElementById("italic").checked) {
+                typographicEmphasis += " italic";
             }
 
 
-            if (document.getElementById("styleUnderline").checked) {
-                typographicEmphasis += " styleUnderline";
+            if (document.getElementById("underline").checked) {
+                typographicEmphasis += " underline";
             }
 
             document.getElementById("text").className = typographicEmphasis;
@@ -105,7 +105,6 @@
     <h2>Styles</h2>
 
     <fieldset>
-
         Choose a Background Color
 
         <p></p>
@@ -139,16 +138,16 @@
         Add Any Typographical Emphasis
 
         <p></p>
-        <input type="checkbox" id="styleBold" name="styleBold" onchange="change()">
-        <label for="styleBold">Bold</label>
+        <input type="checkbox" id="bold" name="bold" onchange="change()">
+        <label for="bold">Bold</label>
 
         <p></p>
-        <input type="checkbox" id="styleItalic" name="styleItalic" onchange="change()">
-        <label for="styleItalic">Italic</label>
+        <input type="checkbox" id="italic" name="italic" onchange="change()">
+        <label for="italic">Italic</label>
 
         <p></p>
-        <input type="checkbox" id="styleUnderline" name="styleUnderline" onchange="change()">
-        <label for="styleUnderline">Underlined</label>
+        <input type="checkbox" id="underline" name="underline" onchange="change()">
+        <label for="underline">Underlined</label>
 
     </fieldset>
 
