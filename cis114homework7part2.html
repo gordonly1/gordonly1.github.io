@@ -23,20 +23,19 @@
 
                 <br>
                 Enter your name and username:
+                <br><br>
 
                 <p></p>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name">
 
-
                 <p></p>
                 <label for="Username">Username:</label>
                 <input type="text" id="Username" name="Username">
 
-
                 <p></p>
-                <button type="button" id="submitButton" onclick="submit()">Submit</button>
-                <p></p>
+                <button type="button" id="submission" onclick="submit()">Submit</button>
+                <br><br>
 
             </form>
         </div>
@@ -49,7 +48,6 @@
             function submit() {
                 name = document.getElementById("name").value;
                 Username = document.getElementById("Username").value;
-
                 document.cookie = "name=" + name + "; path=/";
                 document.cookie = "Username=" + Username + "; path=/";
                 history.go(0);
