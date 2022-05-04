@@ -80,9 +80,9 @@
 
             typographicEmphasis = fonts;
 
-            backgroundColorSelectedElement = document.querySelector('input[name="backgroundColor"]:checked');
-            if (backgroundColorSelectedElement) {
-                typographicEmphasis += " " + backgroundColorSelectedElement.id;
+            backgroundThemeSelectedElement = document.querySelector('input[name="backgroundTheme"]:checked');
+            if (backgroundThemeSelectedElement) {
+                typographicEmphasis += " " + backgroundThemeSelectedElement.id;
             }
 
             if (document.getElementById("styleBold").checked) {
@@ -108,18 +108,17 @@
         Choose a Background Color
 
         <p></p>
-        <input type="radio" id="whiteBackground" name="backgroundColor" onchange="change()">
+        <input type="radio" id="whiteBackground" name="backgroundTheme" onchange="change()">
         <label for="whiteBackground">White</label>
 
         <p></p>
-        <input type="radio" id="cyanBackground" name="backgroundColor" onchange="change()">
+        <input type="radio" id="cyanBackground" name="backgroundTheme" onchange="change()">
         <label for="cyanBackground">Cyan</label>
 
         <p></p>
-        <input type="radio" id="yellowBackground" name="backgroundColor" onchange="change()">
+        <input type="radio" id="yellowBackground" name="backgroundTheme" onchange="change()">
         <label for="yellowBackground">Yellow</label>
         <p></p>
-
     </fieldset>
 
     <fieldset>
