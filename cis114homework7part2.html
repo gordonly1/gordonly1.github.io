@@ -45,14 +45,6 @@
         </div>
 
         <script>
-            function submit() {
-                name = document.getElementById("name").value;
-                Username = document.getElementById("Username").value;
-                document.cookie = "name=" + name + "; path=/";
-                document.cookie = "Username=" + Username + "; path=/";
-                history.go(0);
-            }
-
             name = cookie();
 
             if (name == " ") {
@@ -60,7 +52,7 @@
                 document.getElementById("welcome").className = "hidden";
 
             } else {
-                document.getElementById("username").innerText = name;
+                document.getElementById("Username").innerText = name;
                 document.getElementById("form").className = "hidden";
                 document.getElementById("welcome").className = " ";
             }
@@ -83,6 +75,14 @@
                 }
 
                 return " ";
+            }
+
+            function submit() {
+                name = document.getElementById("name").value;
+                Username = document.getElementById("Username").value;
+                document.cookie = "name=" + name + "; path=/";
+                document.cookie = "Username=" + Username + "; path=/";
+                history.go(0);
             }
         </script>
 
